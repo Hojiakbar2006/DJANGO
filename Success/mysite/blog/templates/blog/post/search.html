@@ -1,0 +1,15 @@
+<h2>Post Qidirish</h2>
+<form method="get">
+    <label for="id_query">Post nomi:</label>
+    <input type="text" id="id_query" name="query" placeholder="Qidirish...">
+    <button type="submit">Qidirish</button>
+</form>
+      
+{% if results %}
+    <h3>Qidirish natijalari:</h3>
+    <ul>
+        {% for post in results %}
+        <a href='{{post.get_absolute_url}}'>{{post.title}}</a>
+        {% endfor %}
+    </ul>
+{% endif %}
